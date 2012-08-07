@@ -1,0 +1,7 @@
+Main "../app.lua"
+Output "build.lua"
+Module "ffme" "../ffme.lua"
+Module "main" "../main.lua"
+Module "opts" "../opts.lua"
+Module "config" "../config.lua"
+Module "weevil" "../weevil.lua"
