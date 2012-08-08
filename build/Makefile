@@ -10,8 +10,6 @@ all: debug
 
 release: build.h build.c winapi.c wutils.c rc.o
 	$(CC) -static -s -o ffme.exe build.c winapi.c wutils.c rc.o -O2 -mwindows -DPSAPI_VERSION=1 -I$(INCD) -L$(LIBD) $(LIBS)
-	$(UPX) --best --lzma ffme.exe
-	move ffme.exe ../release
 
 debug: build.h build.c winapi.c wutils.c rc.o
 	$(CC) -static -g -o ffme.exe build.c winapi.c wutils.c rc.o -DPSAPI_VERSION=1 -I$(INCD) -L$(LIBD) $(LIBS)
@@ -23,6 +21,7 @@ rc.o: build.rc
 	windres -ibuild.rc -orc.o
 
 build.lua:
+	# squish doesn't work with 5.2 yet, so we need a 5.1 install
 	$(LUA51) squish.lua --no-minify
 
 clean:

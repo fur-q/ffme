@@ -1,6 +1,6 @@
 -- weevil: a tiny, human-readable table serialiser
 -- by furq at b23 dot be
--- 2012/08/03
+-- 2012/08/08
 
 local weevil = {}
 
@@ -10,7 +10,8 @@ local sfmt, conc = string.format, table.concat
 local function loader(str)
   if _VERSION:match(".2$") then
     return load(sfmt("return %s", str), nil, "t", {})
-  elseif _VERSION:match(".1$") then
+  end
+  if _VERSION:match(".1$") then
     return setfenv(loadstring(sfmt("return %s", str)), {})
   end
   error()

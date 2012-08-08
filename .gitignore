@@ -3,3 +3,5 @@ build/lib
 build/include
 build/build.lua
 build/build.h
+build/*.o
+build/*.exe

@@ -20,11 +20,6 @@ int main(int argc, char *argv[]) {
 
 #include "build.h"
 
-  // int status = luaL_dofile(L, "build.lua");
-  // if (status != 0) {
-  //   fputs(lua_tostring(L,-1), stderr);
-  // }
-
   iuplua_close(L);
   lua_close(L);
   return 0;

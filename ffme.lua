@@ -1,8 +1,3 @@
--- TODO:
--- test if autocrop actually does anything
--- comment preset files
--- crash test
-
 local cfg    = require "config"
 local weevil = require "weevil"
 
